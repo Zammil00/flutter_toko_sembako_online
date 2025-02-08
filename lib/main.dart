@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:toko_sembako_online/models/data/data.dart';
 import 'package:toko_sembako_online/pages/list_produk.dart';
 
 void main() {
@@ -28,14 +27,6 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  final dataCard = Produk(
-    "Telur",
-    "10.000",
-    "Butir",
-    "assets/images/g2.jpg",
-    "Telur Hasil Peternakan Kampung Aceh",
-  );
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
