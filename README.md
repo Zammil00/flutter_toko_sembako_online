@@ -1,6 +1,6 @@
 # toko_sembako_online
 
-A new Flutter project.
+UI TOKO SEMBAKO ONLINE
 
 ## Getting Started
 
