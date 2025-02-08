@@ -2,15 +2,35 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:toko_sembako_online/models/data/data.dart';
 
-class DetailProduk extends StatelessWidget {
+class DetailProduk extends StatefulWidget {
   const DetailProduk({super.key, required this.produk});
 
   final Produk produk;
+
+  @override
+  State<DetailProduk> createState() => _DetailProdukState();
+}
+
+class _DetailProdukState extends State<DetailProduk> {
+  int jumlahChek = 0;
+
+  void tambahChek() {
+    jumlahChek++;
+    setState(() {});
+  }
+
+  void kurangChek() {
+    if (jumlahChek != 0) {
+      jumlahChek--;
+      setState(() {});
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.deepOrange,
         elevation: 1,
         leading: IconButton(
           onPressed: () {
@@ -43,7 +63,7 @@ class DetailProduk extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            produk.nama,
+            widget.produk.nama,
             style: GoogleFonts.lato(
               color: Colors.black,
               fontSize: 50,
@@ -52,12 +72,13 @@ class DetailProduk extends StatelessWidget {
           ),
           Center(
             child: Hero(
-              tag: produk.gambar,
+              tag: widget.produk.gambar,
               child: Container(
                 height: MediaQuery.of(context).size.height * 0.45,
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage(produk.gambar), fit: BoxFit.contain)),
+                        image: AssetImage(widget.produk.gambar),
+                        fit: BoxFit.contain)),
               ),
             ),
           ),
@@ -70,13 +91,21 @@ class DetailProduk extends StatelessWidget {
             child: Row(
               children: [
                 Text(
-                  "Rp. " + produk.harga,
+                  "Rp. ${widget.produk.harga}",
                   style: GoogleFonts.lato(
                     color: Colors.deepOrange,
                     fontSize: 30,
                     fontWeight: FontWeight.w700,
                   ),
-                )
+                ),
+                Text(
+                  " / ${widget.produk.jumlah}",
+                  style: GoogleFonts.lato(
+                    color: Colors.deepOrange,
+                    fontSize: 30,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
               ],
             ),
           ),
@@ -85,10 +114,10 @@ class DetailProduk extends StatelessWidget {
               color: Colors.grey[400],
               padding: EdgeInsets.all(20),
               child: Text(
-                produk.deskripsi,
+                widget.produk.deskripsi,
                 style: GoogleFonts.lato(
                   color: Colors.black,
-                  fontSize: 15,
+                  fontSize: 17,
                   fontWeight: FontWeight.w500,
                 ),
                 textAlign: TextAlign.justify,
@@ -110,7 +139,7 @@ class DetailProduk extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       IconButton(
-                        onPressed: () {},
+                        onPressed: kurangChek,
                         icon: Icon(
                           Icons.remove_circle_outline,
                           color: Colors.white,
@@ -118,7 +147,7 @@ class DetailProduk extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        "1",
+                        jumlahChek.toString(),
                         style: GoogleFonts.lato(
                           color: Colors.white,
                           fontSize: 30,
@@ -126,7 +155,7 @@ class DetailProduk extends StatelessWidget {
                         ),
                       ),
                       IconButton(
-                        onPressed: () {},
+                        onPressed: tambahChek,
                         icon: Icon(
                           Icons.add_circle_outline,
                           color: Colors.white,

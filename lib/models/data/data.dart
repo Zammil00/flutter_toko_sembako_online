@@ -18,7 +18,7 @@ final List<Produk> produkList = [
   Produk(
     "Telur",
     "10.000",
-    "Butir",
+    "Kg",
     "assets/images/g2.jpg",
     "Telur hasil peternakan Kampung Aceh yang dipelihara secara alami tanpa bahan kimia. Telur ini memiliki kualitas tinggi dengan cangkang yang kuat dan kuning telur yang kaya nutrisi, sangat baik untuk kebutuhan gizi keluarga dan cocok digunakan dalam berbagai olahan masakan, mulai dari telur dadar, kue, hingga makanan bergizi lainnya.",
   ),
