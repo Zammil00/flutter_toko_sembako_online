@@ -30,7 +30,7 @@ class _DetailProdukState extends State<DetailProduk> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.deepOrange,
+        backgroundColor: Colors.deepOrangeAccent.shade400,
         elevation: 1,
         leading: IconButton(
           onPressed: () {
@@ -83,7 +83,7 @@ class _DetailProdukState extends State<DetailProduk> {
             ),
           ),
           Container(
-            color: Colors.grey[400],
+            color: Colors.yellow.shade50,
             padding: EdgeInsets.only(
               left: 20,
               top: 20,
@@ -109,9 +109,18 @@ class _DetailProdukState extends State<DetailProduk> {
               ],
             ),
           ),
+
+          // DESKRIPSI
           Expanded(
             child: Container(
-              color: Colors.grey[400],
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Colors.yellow.shade50, Colors.yellowAccent.shade200],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                ),
+              ),
+              // color: Colors.grey[400],
               padding: EdgeInsets.all(20),
               child: Text(
                 widget.produk.deskripsi,
@@ -126,11 +135,13 @@ class _DetailProdukState extends State<DetailProduk> {
               ),
             ),
           ),
+
+          // Buttom BAR
           Container(
             height: 100,
             padding: EdgeInsets.symmetric(horizontal: 20),
             alignment: Alignment.bottomCenter,
-            color: Colors.blueGrey,
+            color: Colors.deepOrangeAccent.shade400,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -175,7 +186,7 @@ class _DetailProdukState extends State<DetailProduk> {
                           25,
                         ),
                       ),
-                      color: Colors.deepOrange,
+                      color: Colors.deepOrangeAccent.shade700,
                     ),
                     child: Center(
                       child: Text(

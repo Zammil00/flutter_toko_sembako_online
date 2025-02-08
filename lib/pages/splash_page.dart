@@ -23,7 +23,7 @@ class SplashPage extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.deepOrange.shade700, Colors.orange.shade400],
+            colors: [Colors.deepOrange.shade700, Colors.orange.shade50],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
@@ -31,6 +31,7 @@ class SplashPage extends StatelessWidget {
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
             children: [
               Lottie.asset(
                 'assets/animations/splash.json',
@@ -38,11 +39,11 @@ class SplashPage extends StatelessWidget {
                 height: 400,
                 fit: BoxFit.contain,
               ),
-              SizedBox(height: 30),
+              SizedBox(height: 100),
               Text(
                 "SEMBAKO ONLINE",
                 style: GoogleFonts.roboto(
-                  color: Colors.white,
+                  color: Colors.deepPurple,
                   fontSize: 36,
                   fontWeight: FontWeight.w900,
                   letterSpacing: 1.5,

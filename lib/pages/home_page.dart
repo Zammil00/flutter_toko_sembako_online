@@ -16,7 +16,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         appBar: AppBar(
           elevation: 1,
-          backgroundColor: Colors.deepOrange,
+          backgroundColor: Colors.deepOrange.shade700,
           leading: Icon(
             Icons.menu,
             color: Colors.black,
@@ -71,6 +71,8 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
+// BODYY NYA
+
 class ListProduk extends StatefulWidget {
   const ListProduk({super.key});
 
@@ -83,6 +85,13 @@ class _ListProdukState extends State<ListProduk> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Colors.deepOrange.shade700, Colors.orange.shade50],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
         padding: EdgeInsets.all(10),
         child: GridView.builder(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
