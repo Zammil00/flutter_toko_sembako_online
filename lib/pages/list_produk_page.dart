@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:toko_sembako_online/models/data/data.dart';
-import 'package:toko_sembako_online/widget/item_widget.dart';
+import 'package:toko_sembako_online/widget/produk_item_widget.dart';
 
 class ListProduk extends StatefulWidget {
   const ListProduk({super.key});

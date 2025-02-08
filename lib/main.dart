@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:toko_sembako_online/pages/list_produk.dart';
+import 'package:toko_sembako_online/pages/list_produk_page.dart';
 
 void main() {
   runApp(const MyApp());
